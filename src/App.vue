@@ -8,9 +8,10 @@
 </template>
 
 <script setup lang="ts">
-import { useField } from 'vee-validate';
+import { useField, useForm } from 'vee-validate';
 
-function validateName(value: string): true | string {
+const validationSchema = {
+  username(value: string): true | string {
   if (!value.length) {
     return 'Le champ est obligatoire';
   } else if (value.length < 3) {
@@ -20,11 +21,15 @@ function validateName(value: string): true | string {
   } else {
     return true;
   }
+
+  }
 }
+
+function validateName
 
 const { value: usernameValue, errorMessage: usernameError } = useField(
   'username',
-  validateName
+  validationSchema
 );
 </script>
 

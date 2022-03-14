@@ -8,7 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.31"
+    "@vee-validate/zod": "^4.5.10",
+    "vee-validate": "^4.5.10",
+    "vue": "^3.2.31",
+    "zod": "^3.13.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.4",

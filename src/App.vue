@@ -11,8 +11,8 @@
 import { useField, useForm } from 'vee-validate';
 
 const validationSchema = {
-  username(value: string): true | string {
-    if (!value.length) {
+  username(value?: string): true | string {
+    if (!value || !value.length) {
       return 'Le champ est obligatoire';
     } else if (value.length < 3) {
       return 'Le champ est trop court';
